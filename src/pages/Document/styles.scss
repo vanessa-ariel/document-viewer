@@ -1,0 +1,38 @@
+@import '../../scss/colors';
+
+.container {
+  width: 96%;
+  margin: 0 auto;
+}
+
+.documents {
+  padding-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(5, 17.3%);
+  // grid-template-rows: 31.66% 6.25% 31.66% 6.25% 24%;
+  grid-template-rows: repeat(4, 36.4%);
+  column-gap: 3.33%;
+  row-gap: 24px;
+  height: calc(100vh - 64px);
+
+  &__thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &-img {
+      max-width: 100%;
+      max-height: 92%;
+      margin: auto;
+    }
+
+    &-title {
+      align-self: baseline;
+      width: 100%;
+      text-align: center;
+      margin-top: 16px;
+      color: $color-primary-darkest;
+    }
+  }
+}
