@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const modalSlice = createSlice({
   name: 'dashBoardModal',
   initialState: {
-    value: true,
+    value: false,
   },
   reducers: {
     openModal: (state) => {

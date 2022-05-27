@@ -1,9 +1,15 @@
 import { useState } from 'react';
+import { RootState } from '../../app/store';
+import { useSelector } from 'react-redux';
 import Navbar from '../Navbar';
 import './styles.scss';
 
 const ModalArtboard = () => {
-  // if (!isModalVisible) return null;
+  const dashboardModal = useSelector(
+    (state: RootState) => state.dashboardModal.value
+  );
+
+  if (!dashboardModal) return null;
 
   return (
     <section className="modal-artboard">
