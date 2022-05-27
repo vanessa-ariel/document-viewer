@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import dashboardModalReducer from '../reducers/dashboardModalSlice';
+import artboardModalReducer from '../reducers/artboardModalSlice';
+import artboardSliderReducer from '../reducers/artboardSliderSlice';
 
 export const store = configureStore({
   reducer: {
-    dashboardModal: dashboardModalReducer,
+    artboardModal: artboardModalReducer,
+    artboardSlider: artboardSliderReducer,
   },
 });
 

@@ -1,5 +1,6 @@
-import React from 'react';
+import { useState } from 'react';
 import Navbar from '../../components/Navbar';
+import Thumbnails from '../../components/Thumbnail';
 
 import './styles.scss';
 
@@ -8,22 +9,25 @@ interface DocumentPageProps {
 }
 
 const DocumentPage = ({ documentData }: DocumentPageProps) => {
-  const artboards = documentData.map((artboard: any) => {
+  // const [clickedThumbIdx, setClickedThumbIdx] = useState(0);
+
+  // console.log(clickedThumbIdx);
+
+  const thumbnails = documentData.map((thumbnail: any, index: number) => {
     return (
-      <div className="documents__thumbnail">
-        <img
-          className="documents__thumbnail-img"
-          src={artboard.files[0].thumbnails[1].url}
-          alt={artboard.name}
-        />
-        <p className="documents__thumbnail-title">{artboard.name}</p>
-      </div>
+      <Thumbnails
+        thumbnail={thumbnail}
+        key={thumbnail.name}
+        index={index}
+        // setClickedThumbIdx={setClickedThumbIdx}
+      />
     );
   });
+
   return (
     <>
       <Navbar />
-      <section className="documents container">{artboards}</section>
+      <section className="documents container">{thumbnails}</section>
     </>
   );
 };

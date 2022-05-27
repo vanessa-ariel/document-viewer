@@ -1,19 +1,27 @@
-import { useState } from 'react';
 import { RootState } from '../../app/store';
 import { useSelector } from 'react-redux';
 import Navbar from '../Navbar';
+import Artboard from '../Artboard';
 import './styles.scss';
 
 const ModalArtboard = () => {
-  const dashboardModal = useSelector(
-    (state: RootState) => state.dashboardModal.value
+  const artboardModal = useSelector(
+    (state: RootState) => state.artboardModal.value
   );
+  const artboardSlider = useSelector(
+    (state: RootState) => state.artboardSlider
+  );
+  const { currentArtboardIndex, value } = artboardSlider;
 
-  if (!dashboardModal) return null;
+  if (!artboardModal) return null;
 
   return (
     <section className="modal-artboard">
-      <Navbar insideArtboardPage={true} />
+      <Navbar
+        insideArtboardPage={true}
+        currentArtboard={currentArtboardIndex + 1}
+      />
+      <Artboard />
     </section>
   );
 };

@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { closeModal } from '../../reducers/dashboardModalSlice';
+import { closeModal } from '../../reducers/artboardModalSlice';
 import SketchLogo from '../../assets/sketch-logo.svg';
 import Separator from '../../assets/separator.svg';
 import CloseIcon from '../../assets/close.svg';
@@ -10,9 +10,13 @@ import './styles.scss';
 
 interface NavbarProps {
   insideArtboardPage?: boolean;
+  currentArtboard?: number;
 }
 
-const Navbar = ({ insideArtboardPage = false }: NavbarProps) => {
+const Navbar = ({
+  insideArtboardPage = false,
+  currentArtboard,
+}: NavbarProps) => {
   const dispatch = useDispatch();
 
   const defaultNav = (
@@ -40,7 +44,7 @@ const Navbar = ({ insideArtboardPage = false }: NavbarProps) => {
           <button className="nav__arrow snav__controls-left">
             <img src={ArrowLeft} alt="Go to previous artboard" />
           </button>
-          <span className="nav__controls-numbers">4 / 10</span>
+          <span className="nav__controls-numbers">{currentArtboard} / 10</span>
           <button className="nav__arrow snav__controls-right">
             <img src={ArrowRight} alt="Go to next artboard" />
           </button>

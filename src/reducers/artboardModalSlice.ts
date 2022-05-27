@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const modalSlice = createSlice({
-  name: 'dashBoardModal',
+  name: 'artBoardModal',
   initialState: {
     value: false,
   },
