@@ -1,0 +1,16 @@
+.controls {
+  margin-left: 8px;
+
+  &__numbers {
+    margin: 0 8px;
+  }
+  &__arrow {
+    width: 15.23px;
+    height: 17px;
+    align-items: center;
+
+    img {
+      height: 12px;
+    }
+  }
+}

@@ -8,7 +8,7 @@ import './App.scss';
 function App() {
   useFetchData();
   const documentData = useSelector(
-    (state: RootState) => state.artboardSlider.value
+    (state: RootState) => state.artboardData.value
   );
 
   return (

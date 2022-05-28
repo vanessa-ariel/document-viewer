@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const modalSlice = createSlice({
-  name: 'artboardSlider',
+export const artboardDataSlice = createSlice({
+  name: 'artboardData',
   initialState: {
     value: [],
     currentArtboardIndex: 0,
@@ -16,13 +16,13 @@ export const modalSlice = createSlice({
     addArray: (state, action) => {
       state.value = action.payload;
     },
-    setOpenArtboard: (state, action) => {
+    openArtboard: (state, action) => {
       state.currentArtboardIndex = action.payload;
     },
   },
 });
 
-export const { nextSlide, prevSlide, addArray, setOpenArtboard } =
-  modalSlice.actions;
+export const { nextSlide, prevSlide, addArray, openArtboard } =
+  artboardDataSlice.actions;
 
-export default modalSlice.reducer;
+export default artboardDataSlice.reducer;

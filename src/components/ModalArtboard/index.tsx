@@ -5,22 +5,17 @@ import Artboard from '../Artboard';
 import './styles.scss';
 
 const ModalArtboard = () => {
-  const artboardModal = useSelector(
+  const artboardModalVisible = useSelector(
     (state: RootState) => state.artboardModal.value
   );
-  const artboardSlider = useSelector(
-    (state: RootState) => state.artboardSlider
-  );
-  const { currentArtboardIndex, value } = artboardSlider;
+  const artboardData = useSelector((state: RootState) => state.artboardData);
+  const { currentArtboardIndex, value } = artboardData;
 
-  if (!artboardModal) return null;
+  if (!artboardModalVisible) return null;
 
   return (
     <section className="modal-artboard">
-      <Navbar
-        insideArtboardPage={true}
-        currentArtboard={currentArtboardIndex + 1}
-      />
+      <Navbar insideArtboardPage={true} />
       <Artboard />
     </section>
   );

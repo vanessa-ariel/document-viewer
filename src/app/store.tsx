@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import artboardModalReducer from '../reducers/artboardModalSlice';
-import artboardSliderReducer from '../reducers/artboardSliderSlice';
+import artboardDataReducer from '../reducers/artboardDataSlice';
 
 export const store = configureStore({
   reducer: {
     artboardModal: artboardModalReducer,
-    artboardSlider: artboardSliderReducer,
+    artboardData: artboardDataReducer,
   },
 });
 

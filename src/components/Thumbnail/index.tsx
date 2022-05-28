@@ -1,24 +1,18 @@
 import { useDispatch } from 'react-redux';
 import { openModal } from '../../reducers/artboardModalSlice';
-import { setOpenArtboard } from '../../reducers/artboardSliderSlice';
+import { openArtboard } from '../../reducers/artboardDataSlice';
 import './styles.scss';
 
 interface ThumbnailProps {
   thumbnail: any;
   index: number;
-  // setClickedThumbIdx: (idx: number) => void;
 }
 
-const Thumbnail = ({
-  thumbnail,
-  index,
-}: // setClickedThumbIdx,
-ThumbnailProps) => {
+const Thumbnail = ({ thumbnail, index }: ThumbnailProps) => {
   const dispatch = useDispatch();
 
   const handleThumbClick = () => {
-    // setClickedThumbIdx(index);
-    dispatch(setOpenArtboard(index));
+    dispatch(openArtboard(index));
     dispatch(openModal());
   };
 
@@ -30,7 +24,7 @@ ThumbnailProps) => {
     >
       <img
         className="thumbnail__img"
-        src={thumbnail.files[0].thumbnails[1].url}
+        src={thumbnail.urlThumbImg}
         alt={thumbnail.name}
       />
       <p className="thumbnail__title">{thumbnail.name}</p>

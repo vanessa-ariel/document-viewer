@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { addArray } from '../reducers/artboardSliderSlice';
+import { addArray } from '../reducers/artboardDataSlice';
+import formatArtboardData from '../utils/formatArtboardData';
 
 const useFetchData = () => {
   const dispatch = useDispatch();
@@ -42,7 +43,10 @@ const useFetchData = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        dispatch(addArray(data.data.share.version.document.artboards.entries));
+        const formattedData = formatArtboardData(
+          data.data.share.version.document.artboards.entries
+        );
+        dispatch(addArray(formattedData));
       });
   }, []);
 };
