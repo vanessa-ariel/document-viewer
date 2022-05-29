@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { ArtboardInfo } from '../types/artboardType';
 
 export const artboardDataSlice = createSlice({
   name: 'artboardData',
   initialState: {
-    value: [],
+    artboardArr: [],
     currentArtboardIndex: 0,
   },
   reducers: {
@@ -14,7 +15,7 @@ export const artboardDataSlice = createSlice({
       state.currentArtboardIndex -= 1;
     },
     addArray: (state, action) => {
-      state.value = action.payload;
+      state.artboardArr = action.payload;
     },
     openArtboard: (state, action) => {
       state.currentArtboardIndex = action.payload;

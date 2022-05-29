@@ -4,15 +4,19 @@ import Controller from '../Controls';
 import SketchLogo from '../../assets/sketch-logo.svg';
 import Separator from '../../assets/separator.svg';
 import CloseIcon from '../../assets/close.svg';
+import { ArtboardInfo } from '../../types/artboardType';
 
 import './styles.scss';
 
 interface NavbarProps {
   insideArtboardPage?: boolean;
-  currentArtboard?: number;
+  selectedArtboard?: ArtboardInfo;
 }
 
-const Navbar = ({ insideArtboardPage = false }: NavbarProps) => {
+const Navbar = ({
+  insideArtboardPage = false,
+  selectedArtboard,
+}: NavbarProps) => {
   const dispatch = useDispatch();
 
   const defaultNav = (
@@ -39,7 +43,9 @@ const Navbar = ({ insideArtboardPage = false }: NavbarProps) => {
         <Controller />
       </div>
       <div className="nav__column">
-        <div className="nav__artboard-title">Android</div>
+        <div className="nav__artboard-title">
+          {selectedArtboard ? selectedArtboard.name : ''}
+        </div>
       </div>
     </div>
   );

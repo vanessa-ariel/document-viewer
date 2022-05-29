@@ -6,14 +6,12 @@
 }
 
 .documents {
-  padding-top: 24px;
+  padding: 24px 0;
   display: grid;
   grid-template-columns: repeat(5, 17.3%);
-  // grid-template-rows: 31.66% 6.25% 31.66% 6.25% 24%;
-  grid-template-rows: repeat(4, 36.4%);
+  grid-template-rows: repeat(4, 340px);
   column-gap: 3.33%;
   row-gap: 24px;
-  height: calc(100vh - 64px);
 
   &__thumbnail {
     display: flex;

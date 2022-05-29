@@ -1,10 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { openModal } from '../../reducers/artboardModalSlice';
 import { openArtboard } from '../../reducers/artboardDataSlice';
+import { ArtboardInfo } from '../../types/artboardType';
 import './styles.scss';
 
 interface ThumbnailProps {
-  thumbnail: any;
+  thumbnail: ArtboardInfo;
   index: number;
 }
 
@@ -17,18 +18,20 @@ const Thumbnail = ({ thumbnail, index }: ThumbnailProps) => {
   };
 
   return (
-    <button
-      className="thumbnail"
-      key={thumbnail.name}
-      onClick={handleThumbClick}
-    >
-      <img
-        className="thumbnail__img"
-        src={thumbnail.urlThumbImg}
-        alt={thumbnail.name}
-      />
+    <div className="thumbnail">
+      <button
+        className="thumbnail__btn"
+        key={thumbnail.name}
+        onClick={handleThumbClick}
+      >
+        <img
+          className="thumbnail__img"
+          src={thumbnail.urlThumbImg}
+          alt={thumbnail.name}
+        />
+      </button>
       <p className="thumbnail__title">{thumbnail.name}</p>
-    </button>
+    </div>
   );
 };
 

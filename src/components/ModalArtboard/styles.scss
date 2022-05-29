@@ -1,10 +1,10 @@
 @import '../../scss/colors';
 
 .modal-artboard {
-  position: absolute;
+  background-color: $color-neutral;
+  position: fixed;
   left: 0;
   right: 0;
   z-index: 9;
   height: 100vh;
-  background-color: $color-neutral;
 }

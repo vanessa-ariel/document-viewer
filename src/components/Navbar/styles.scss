@@ -1,5 +1,4 @@
-@import '../../scss/colors';
-@import '../../scss/base';
+@import '../../scss/dependencies.scss';
 
 .nav {
   background-color: $color-lightest;
@@ -11,7 +10,6 @@
   align-items: center;
   height: 64px;
   padding: 16px;
-  font-family: Helvetica, sans-serif;
   font-size: 16px;
 
   &__group {
@@ -53,7 +51,6 @@
   }
 
   &__artboard-title {
-    font-family: Helvetica, Arial, sans-serif;
     line-height: 16px;
     font-weight: 600;
     color: $color-darkest;

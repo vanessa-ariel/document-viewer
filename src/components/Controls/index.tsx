@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
 import { nextSlide, prevSlide } from '../../reducers/artboardDataSlice';
@@ -9,12 +8,12 @@ import './styles.scss';
 const Controller = () => {
   const dispatch = useDispatch();
   const artboardData = useSelector((state: RootState) => state.artboardData);
-  const { currentArtboardIndex, value } = artboardData;
-  const itemsTotal = value.length;
+  const { currentArtboardIndex, artboardArr } = artboardData;
+  const itemsTotal = artboardArr.length;
   const itemNumber = currentArtboardIndex + 1;
 
   const handleClickPrev = () => {
-    if (itemNumber > 0) {
+    if (itemNumber > 1) {
       return dispatch(prevSlide());
     }
   };
@@ -29,9 +28,11 @@ const Controller = () => {
       <button className="controls__arrow" onClick={handleClickPrev}>
         <img src={ArrowLeft} alt="Go to previous artboard" />
       </button>
-      <span className="controls___numbers">
-        {itemNumber} / {itemsTotal}
-      </span>
+      <div>
+        <span className="controls__numbers">{itemNumber}</span>
+        <span>/</span>
+        <span className="controls__numbers">{itemsTotal}</span>
+      </div>
       <button className="controls__arrow" onClick={handleClickNext}>
         <img src={ArrowRight} alt="Go to next artboard" />
       </button>
