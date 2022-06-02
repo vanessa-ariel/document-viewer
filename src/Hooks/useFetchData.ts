@@ -48,7 +48,7 @@ const useFetchData = () => {
         );
         dispatch(addArray(formattedData));
       });
-  }, [SKETCH_QUERY]);
+  }, [SKETCH_QUERY, dispatch]);
 };
 
 export default useFetchData;
