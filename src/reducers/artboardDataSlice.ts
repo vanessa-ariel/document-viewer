@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ArtboardInfo } from '../types/artboardType';
 
 export const artboardDataSlice = createSlice({
   name: 'artboardData',
